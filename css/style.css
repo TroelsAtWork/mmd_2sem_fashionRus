@@ -121,58 +121,6 @@ html {
   color: var(--text-decoration-color);
 }
 
-/* .soldOut .sold_out_and_img_container img {
-  opacity: 0.8;
-} */
-/*
-
-.productlist article > * {
-  margin: 0;
-  font-size: 0.9rem;
-}
-.subtle {
-  color: var(--text-decoration-color);
-}
-.productlist article {
-  display: flex;
-  flex-direction: column;
-}
-.productlist article.soldOut img {
-  opacity: 0.5;
-}
-.productlist article.soldOut::before {
-  content: "Sold Out";
-  position: absolute;
-  background: var(--color);
-  color: var(--background-color);
-  padding: 1rem;
-}
-.productlist article .discounted {
-  display: none;
-}
-.productlist article.onSale .discounted {
-  display: flex;
-  justify-content: space-between;
-}
-.discounted > p {
-  margin-bottom: 0;
-}
-.productlist article.onSale .price span {
-  
-  text-decoration: line-through;
-  color: var(--off-color);
-}
-.productlist article button {
-  margin-top: auto;
-}
-.productlist article {
-  margin-bottom: 1rem;
-}
-.discounted p:last-child {
-  background: var(--off-color);
-  padding: 0.2rem;
-} */
-
 /*Product*/
 .breadcrumbs {
   display: none;
