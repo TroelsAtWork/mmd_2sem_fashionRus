@@ -93,27 +93,27 @@ html {
   text-decoration: line-through;
 }
 
-.color_me_red {
+.productlist .color_me_red {
   background-color: red;
 }
-.color_me_gray {
+.productlist .color_me_gray {
   background-color: black;
 }
-.sold_out_and_img_container {
+.productlist .sold_out_and_img_container {
   display: grid;
   > * {
     place-self: start start;
     grid-area: 1 / 1;
   }
 }
-.soldoutTxt {
+.productlist .soldoutTxt {
   display: none;
 }
-.soldOut .soldoutTxt {
+.productlist .soldOut .soldoutTxt {
   display: block;
   /* position: absolute; */
 }
-.soldOut img {
+.productlist .soldOut img {
   opacity: 0.3;
 }
 
