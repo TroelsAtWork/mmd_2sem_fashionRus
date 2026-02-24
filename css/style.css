@@ -54,20 +54,18 @@ html {
   & main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
   }
-
   & article {
+    position: relative;
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 6;
     gap: 0;
   }
-
   & main h2 {
     grid-column: 1/-1;
   }
-
   & article h3 {
     font-size: 1rem;
   }
@@ -75,32 +73,11 @@ html {
     margin: 0;
     font-size: 0.9rem;
   }
-
-  & .sold_out_and_img_container {
-    display: grid;
-    > * {
-      place-self: start start;
-      grid-area: 1/1;
-    }
-  }
-  & .color_me_gray {
-    background-color: black;
-  }
-  & .productlist .soldOut img {
-    opacity: 0.3;
-  }
-
-  & .soldoutTxt {
-    display: none;
-  }
-
-  & .soldOut .soldoutTxt {
-    display: block;
-  }
   & .discounted_element p,
   & .discounted.soldOut .discounted_element p {
     display: none;
   }
+
   & .discounted .discounted_element {
     display: flex;
     justify-content: space-between;
@@ -108,7 +85,44 @@ html {
       display: block;
     }
   }
+
+  & .discounted .price {
+    text-decoration: line-through;
+  }
+
+  & .color_me_red {
+    background-color: red;
+  }
+  .color_me_gray {
+    background-color: black;
+    color: red;
+  }
+
+  & .soldoutTxt {
+    display: none;
+  }
+  & .soldOut .soldoutTxt {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
+
+  & .soldOut::after {
+    content: "";
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.442);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  & .subtle {
+    color: var(--text-decoration-color);
+  }
 }
+
 /*Product*/
 .breadcrumbs {
   display: none;
