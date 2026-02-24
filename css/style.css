@@ -50,65 +50,65 @@ html {
 }
 
 /*ProductList*/
-.productlist main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
-  gap: 2rem;
-}
-.productlist main h2 {
-  grid-column: 1/-1;
-}
-.productlist article h3 {
-  font-size: 1rem;
-  flex-grow: 3;
-}
-.productlist article > * {
-  margin: 0;
-  font-size: 0.9rem;
-}
-.subtle {
-  color: var(--text-decoration-color);
-}
-.productlist article {
-  display: flex;
-  flex-direction: column;
-}
-.productlist article.soldOut img {
-  opacity: 0.5;
-}
-.productlist article.soldOut::before {
-  content: "Sold Out";
-  position: absolute;
-  background: var(--color);
-  color: var(--background-color);
-  padding: 1rem;
-}
-.productlist article .discounted {
-  display: none;
-}
-.productlist article.onSale .discounted {
-  display: flex;
-  justify-content: space-between;
-}
-.discounted > p {
-  margin-bottom: 0;
-}
-.productlist article.onSale .price span {
-  /* display: initial; */
-  text-decoration: line-through;
-  color: var(--off-color);
-}
-.productlist article button {
-  margin-top: auto;
-}
-.productlist article {
-  margin-bottom: 1rem;
-}
-.discounted p:last-child {
-  background: var(--off-color);
-  padding: 0.2rem;
-}
+.productlist {
+  & main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
 
+  & article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+    gap: 0;
+  }
+
+  & main h2 {
+    grid-column: 1/-1;
+  }
+
+  & article h3 {
+    font-size: 1rem;
+  }
+  & article > * {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  & .sold_out_and_img_container {
+    display: grid;
+    > * {
+      place-self: start start;
+      grid-area: 1/1;
+    }
+  }
+  & .color_me_gray {
+    background-color: black;
+  }
+  & .productlist .soldOut img {
+    opacity: 0.3;
+  }
+
+  & .soldoutTxt {
+    display: none;
+  }
+
+  & .soldOut .soldoutTxt {
+    display: block;
+  }
+  & .discounted_element p,
+  & .discounted.soldOut .discounted_element p {
+    display: none;
+  }
+  & .discounted .discounted_element {
+    display: flex;
+    justify-content: space-between;
+    & p {
+      display: block;
+    }
+  }
+}
 /*Product*/
 .breadcrumbs {
   display: none;
