@@ -60,7 +60,7 @@ html {
     position: relative;
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 7;
+    grid-row: span 6;
     gap: 0;
   }
   & main h2 {
