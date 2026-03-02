@@ -23,7 +23,7 @@ function showProducts(productsArr) {
           <p>Now DKK <span></span>,-</p>
           <p class="color_me_red"><span></span>%</p>
         </div>
-        <a href="product.html">Read More</a>
+        <a href="product.html?id=${product.id}"}>Read More</a>
       </article>`;
   });
 }
