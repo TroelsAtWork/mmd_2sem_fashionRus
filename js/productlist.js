@@ -1,6 +1,10 @@
 "use strict";
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+console.log("category", category);
+
 const productContainer = document.querySelector("main");
-fetch("https://kea-alt-del.dk/t7/api/products")
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}&limit=50`)
   .then((response) => response.json())
   .then((data) => {
     showProducts(data);
@@ -10,7 +14,7 @@ function showProducts(productsArr) {
   // console.log("productsArr", productsArr);
   productContainer.innerHTML = "";
   productsArr.forEach((product) => {
-    console.log("product", product.id);
+    // console.log("product", product.id);
 
     productContainer.innerHTML += `<article class="smallProduct">
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
